@@ -1,27 +1,35 @@
-#include <iostream>
+#include<iostream>
+#include<cmath>
 using namespace std;
-
-int sum_of_digits(int n);
-
-int main() {
-	int n,s=0;
-	cout<<"enter a number\n";
-	cin>>n;
-	s=sum_of_digits(n);
-	cout<<"sum of the digits is "<<s;
-	return 0;
-}
-
-int sum_of_digits(int n)
+int armstrong(int n);
+int main()
 {
-	int f=0,s=0;
-	while(n>0)
-	{
-		f=n%10;
-		n=n/10;
-		s=s+f;
-	            
-	}
-	return s;
-
+     int n,i,arm;
+     cout<<"enter n  numbers\n";
+     cin>>n;
+     cout<<"the armstrong number are ";
+     for(i=1;i<=n;i++)
+     { 
+            if(armstrong(i))
+                cout<<i<<" ";
+     }
+     return 0;
 }
+ int armstrong(int n)
+ {
+ 	  int num,ar=0,r;
+ 	  num=n;
+       while(num!=0)
+       {
+          r=num%10;
+          ar=ar+pow(r,3);
+          num=num/10;
+       }
+       if(ar==n)
+          return 1;
+        else 
+            return 0;
+           
+     
+ }
+  
